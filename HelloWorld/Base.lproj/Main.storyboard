@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,40 +17,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryj-Dt-jlm">
-                                <rect key="frame" x="45" y="429" width="300" height="336"/>
-                                <color key="backgroundColor" red="0.96841138601303101" green="0.96341622420080275" blue="0.3557996681904837" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUF-la-pGY">
-                                <rect key="frame" x="45" y="92" width="300" height="336"/>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, world !!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ryv-k0-W3y">
+                                <rect key="frame" x="62" y="147" width="266" height="58.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I0-t8-AIM">
+                                <rect key="frame" x="90" y="510" width="210" height="42"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="210" id="y3i-PM-pou"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show Greeting">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="greetingButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="56i-WF-cJa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ryj-Dt-jlm" firstAttribute="width" secondItem="OUF-la-pGY" secondAttribute="width" id="3ME-jV-4zq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ryj-Dt-jlm" secondAttribute="bottom" constant="45" id="4QB-sa-rdo"/>
-                            <constraint firstItem="OUF-la-pGY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="Rge-zy-D77"/>
-                            <constraint firstItem="Ryj-Dt-jlm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Xr2-QH-yrS"/>
-                            <constraint firstItem="OUF-la-pGY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Y3C-ul-AUh"/>
-                            <constraint firstItem="Ryj-Dt-jlm" firstAttribute="height" secondItem="OUF-la-pGY" secondAttribute="height" id="dbB-Cg-MuF"/>
-                            <constraint firstItem="Ryj-Dt-jlm" firstAttribute="top" secondItem="OUF-la-pGY" secondAttribute="bottom" constant="1" id="gtt-YF-xUu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OUF-la-pGY" secondAttribute="trailing" constant="45" id="uwf-bf-qTi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2I0-t8-AIM" secondAttribute="bottom" constant="258" id="8tR-sc-Vh2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ryv-k0-W3y" secondAttribute="trailing" constant="62" id="ZiB-lq-ICg"/>
+                            <constraint firstItem="Ryv-k0-W3y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="k52-Zn-1ke"/>
+                            <constraint firstItem="Ryv-k0-W3y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="lUR-T4-UO4"/>
+                            <constraint firstItem="2I0-t8-AIM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qLL-c9-UfT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetinButton" destination="2I0-t8-AIM" id="4dM-0P-bJa"/>
+                        <outlet property="greetingLabel" destination="Ryv-k0-W3y" id="8nb-2t-qJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="-309"/>
+            <point key="canvasLocation" x="93.84615384615384" y="-309.24170616113742"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
